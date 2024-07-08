@@ -151,7 +151,7 @@ Then we'll play them using the `playAudio` method.
     this.theme.stop();
     this.theme.play({
       mute: false,
-      volume: 1,
+      volume: 0,
       rate: 1,
       detune: 0,
       seek: 0,
@@ -181,8 +181,7 @@ This is the method that we use to make the player jump. A jump is just a velocit
 We also play a jumping sound and we add a tween to rotate the player while jumping.
 */
   jump() {
-    if (!this.player.body.blocked.down) return;
-    this.player.body.setVelocityY(-300);
+    this.player.body.setVelocityY(-100);
 
     this.playAudio("jump");
     this.jumpTween = this.tweens.add({

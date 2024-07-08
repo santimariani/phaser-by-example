@@ -25,7 +25,7 @@ export default class GameOver extends Phaser.Scene {
         this.center_width,
         this.center_height,
         "arcade",
-        "GAME OVER",
+        "Ha! You SUCK!",
         45
       )
       .setOrigin(0.5);
@@ -34,9 +34,9 @@ export default class GameOver extends Phaser.Scene {
         this.center_width,
         250,
         "arcade",
-        "Press SPACE or Click to restart!",
+        "Press SPACE or CLICK to restart... you LOSER!",
         15
-      )
+      )   
       .setOrigin(0.5);
     this.input.keyboard.on("keydown-SPACE", this.startGame, this);
     this.input.on("pointerdown", (pointer) => this.startGame(), this);
@@ -45,7 +45,7 @@ export default class GameOver extends Phaser.Scene {
   showLine(text, y) {
     let line = this.introLayer.add(
       this.add
-        .bitmapText(this.center_width, y, "pixelFont", text, 25)
+        .bitmapText(this.center_width, y, "pixelFont", text, 50)
         .setOrigin(0.5)
         .setAlpha(0)
     );

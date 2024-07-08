@@ -66,7 +66,7 @@ class Cloud extends Phaser.GameObjects.Rectangle {
     const finalY = y || Phaser.Math.Between(0, 100);
     super(scene, x, finalY, 98, 32, 0xffffff);
     scene.add.existing(this);
-    const alpha = 1 / Phaser.Math.Between(1, 3);
+    const alpha = 1 / Phaser.Math.Between(1, 10);
 
     this.setScale(alpha);
     this.init();
@@ -89,7 +89,7 @@ This is a game object that represents an obstacle. It works exactly like the clo
 */
 class Obstacle extends Phaser.GameObjects.Rectangle {
   constructor(scene, x, y) {
-    super(scene, x, y, 32, 32, 0xff0000);
+    super(scene, x, y, 64, 100, 0xff0000);
     scene.add.existing(this);
     scene.physics.add.existing(this);
     this.body.setAllowGravity(false);
